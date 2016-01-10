@@ -2,17 +2,18 @@
 
 const net = require( 'net' );
 
+let clientArr = [];
+
 const server = net.createServer( function ( clientConn ) {
 
-  console.log( 'tickle tickle' );
+  clientConn.setEncoding( 'utf8' );
 
-  //clientConn.write( 'You\'ve landed in Chaztown!\n' );
+  clientConn.write( 'You\'ve landed in Chaztown!\n' );
 
   clientConn.on( 'data', function( data ) {
-
-    //console.log( data );
-
     process.stdout.write( data );
+    clientArr.push( data.trim() );
+    console.log( clientArr );
   });
 
 });

@@ -30,9 +30,8 @@ process.stdin.on( 'data', function( data ) {
         process.stdout.write( '\n' + userName + ': ');
       });
     });
-    server.write( userName + ': ' + data + '\n' );
+    server.write( userName + '\n' );
   }
-  //server.write( userName + ': ' + data + '\n' );
 });
 
 
