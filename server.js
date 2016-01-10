@@ -1,9 +1,17 @@
+'use strict'
+
 const net = require( 'net' );
 
 const server = net.createServer( function ( clientConn ) {
-  clientConn.write( 'You\'ve landed in Chaztown!\n' );
+
+  console.log( 'tickle tickle' );
+
+  //clientConn.write( 'You\'ve landed in Chaztown!\n' );
 
   clientConn.on( 'data', function( data ) {
+
+    //console.log( data );
+
     process.stdout.write( data );
   });
 
